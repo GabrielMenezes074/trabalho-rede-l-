@@ -4,105 +4,220 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universidade XYZ</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Universidade Rede Lã</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        section {
+            display: none;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>A Universidade XYZ</h1>
+        <h1>A Universidade Rede Lã</h1>
     </header>
     
     <nav>
         <ul>
-            <li><a href="#universidade">A Universidade</a></li>
-            <li><a href="#pro-reitorias">Pró Reitorias</a></li>
-            <li><a href="#ensino">Ensino</a></li>
-            <li><a href="#pesquisa">Pesquisa</a></li>
-            <li><a href="#extensao">Extensão</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#acesso">Acesso a Informação</a></li>
-            <li><a href="#contato">Fale Conosco</a></li>
-            <li><a href="#calendario">Calendário</a></li>
-            <li><a href="#editais">Editais</a></li>
-            <li><a href="#concursos">Concursos</a></li>
-            <li><a href="#processo-seletivo">Processo Seletivo 2024</a></li>
+            <li><a onclick="showContent('universidade')">A Universidade</a></li>
+            <li><a onclick="showContent('pro-reitorias')">Pró Reitorias</a></li>
+            <li><a onclick="showContent('ensino')">Ensino</a></li>
+            <li><a onclick="showContent('pesquisa')">Pesquisa</a></li>
+            <li><a onclick="showContent('extensao')">Extensão</a></li>
+            <li><a onclick="showContent('servicos')">Serviços</a></li>
+            <li><a onclick="showContent('acesso')">Acesso a Informação</a></li>
+            <li><a onclick="showContent('contato')">Fale Conosco</a></li>
+            <li><a onclick="showContent('calendario')">Calendário</a></li>
+            <li><a onclick="showContent('editais')">Editais</a></li>
+            <li><a onclick="showContent('concursos')">Concursos</a></li>
+            <li><a onclick="showContent('processo-seletivo')">Processo Seletivo 2024</a></li>
         </ul>
     </nav>
-    
+
     <section id="universidade">
         <h2>A Universidade</h2>
-        <p>Bem-vindo à página sobre a universidade. Aqui você encontrará informações relevantes.</p>
-        <!-- Conteúdo específico sobre a universidade -->
+        <p>Conteúdo aleatório sobre a universidade.</p>
     </section>
 
     <section id="pro-reitorias">
         <h2>Pró Reitorias</h2>
-        <p>Informações sobre as pró-reitorias da universidade.</p>
-        <!-- Conteúdo específico sobre as pró-reitorias -->
+        <p>Selecione uma pró-reitoria para ver mais informações.</p>
+        <ul>
+            <li><a onclick="showContent('propa')">PROPA</a></li>
+            <li><a onclick="showContent('progeac')">PROGEAC</a></li>
+            <li><a onclick="showContent('proppg')">PROPPG</a></li>
+            <li><a onclick="showContent('progepe')">PROGEPE</a></li>
+            <li><a onclick="showContent('proaf')">PROAF</a></li>
+            <li><a onclick="showContent('proex')">PROEX</a></li>
+            <li><a onclick="showContent('proplan')">PROPLAN</a>
+                <ul>
+                    <li><a onclick="showContent('proplan-conteudo1')">Conteúdo 1</a></li>
+                    <li><a onclick="showContent('proplan-conteudo2')">Conteúdo 2</a></li>
+                </ul>
+            </li>
+        </ul>
     </section>
+
+    <section id="propa">
+        <h2>PROPA</h2>
+        <p>Conteúdo aleatório sobre a PROPA.</p>
+    </section>
+
+    <section id="progeac">
+        <h2>PROGEAC</h2>
+        <p>Conteúdo aleatório sobre a PROGEAC.</p>
+    </section>
+
+    <section id="proppg">
+        <h2>PROPPG</h2>
+        <p>Conteúdo aleatório sobre a PROPPG.</p>
+    </section>
+
+    <section id="progepe">
+        <h2>PROGEPE</h2>
+        <p>Conteúdo aleatório sobre a PROGEPE.</p>
+    </section>
+
+    <section id="proaf">
+        <h2>PROAF</h2>
+        <p>Conteúdo aleatório sobre a PROAF.</p>
+    </section>
+
+    <section id="proex">
+        <h2>PROEX</h2>
+        <p>Conteúdo aleatório sobre a PROEX.</p>
+    </section>
+
+    <section id="proplan">
+        <h2>PROPLAN</h2>
+        <p>Selecione um sub-menu para ver mais informações.</p>
+    </section>
+
+    <section id="proplan-conteudo1">
+        <h2>Conteúdo 1</h2>
+        <p>Conteúdo aleatório sobre o sub-menu de PROPLAN - Conteúdo 1.</p>
+    </section>
+
+    <section id="proplan-conteudo2">
+        <h2>Conteúdo 2</h2>
+        <p>Conteúdo aleatório sobre o sub-menu de PROPLAN - Conteúdo 2.</p>
+    </section>
+
+    <!-- Adicione mais seções conforme necessário -->
 
     <section id="ensino">
         <h2>Ensino</h2>
-        <p>Detalhes sobre os programas de graduação e pós-graduação oferecidos.</p>
-        <!-- Conteúdo específico sobre ensino -->
+        <p>Conteúdo aleatório sobre os programas de graduação e pós-graduação oferecidos.</p>
     </section>
 
     <section id="pesquisa">
         <h2>Pesquisa</h2>
-        <p>Descubra as atividades de pesquisa em andamento na universidade.</p>
-        <!-- Conteúdo específico sobre pesquisa -->
+        <p>Conteúdo aleatório sobre as atividades de pesquisa na universidade.</p>
     </section>
 
     <section id="extensao">
         <h2>Extensão</h2>
-        <p>Informações sobre projetos e atividades de extensão universitária.</p>
-        <!-- Conteúdo específico sobre extensão -->
+        <p>Conteúdo aleatório sobre projetos e atividades de extensão universitária.</p>
     </section>
 
     <section id="servicos">
         <h2>Serviços</h2>
-        <p>Listagem de serviços oferecidos pela universidade.</p>
-        <!-- Conteúdo específico sobre serviços -->
+        <p>Conteúdo aleatório sobre os serviços oferecidos pela universidade.</p>
     </section>
 
     <section id="acesso">
         <h2>Acesso a Informação</h2>
-        <p>Como obter informações sobre a universidade de maneira transparente.</p>
-        <!-- Conteúdo específico sobre acesso à informação -->
+        <p>Conteúdo aleatório sobre como obter informações de forma transparente.</p>
     </section>
 
     <section id="contato">
         <h2>Fale Conosco</h2>
-        <p>Entre em contato conosco para mais informações.</p>
-        <!-- Conteúdo específico sobre contato -->
+        <p>Conteúdo aleatório sobre como entrar em contato conosco.</p>
     </section>
 
     <section id="calendario">
         <h2>Calendário</h2>
-        <p>Datas importantes no calendário acadêmico da universidade.</p>
-        <!-- Conteúdo específico sobre o calendário -->
+        <p>Conteúdo aleatório sobre datas importantes no calendário acadêmico.</p>
     </section>
 
     <section id="editais">
         <h2>Editais</h2>
-        <p>Informações sobre os editais em vigor na universidade.</p>
-        <!-- Conteúdo específico sobre editais -->
+        <p>Conteúdo aleatório sobre os editais em vigor na universidade.</p>
     </section>
 
     <section id="concursos">
         <h2>Concursos</h2>
-        <p>Detalhes sobre os concursos realizados pela universidade.</p>
-        <!-- Conteúdo específico sobre concursos -->
+        <p>Conteúdo aleatório sobre os concursos realizados pela universidade.</p>
     </section>
 
     <section id="processo-seletivo">
         <h2>Processo Seletivo 2024</h2>
-        <p>Informações sobre o processo seletivo de 2024.</p>
-        <!-- Conteúdo específico sobre o processo seletivo -->
+        <p>Conteúdo aleatório sobre o processo seletivo de 2024.</p>
     </section>
 
     <footer>
-        <p>&copy; 2023 Universidade XYZ. Todos os direitos reservados.</p>
+        <p>&copy; 2023 Universidade Rede Lã. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        function showContent(sectionId) {
+            // Oculta todas as seções
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            // Mostra a seção clicada
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
+
