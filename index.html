@@ -1,74 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Universidade Rede Lã</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+    <!DOCTYPE html>
+    <html lang="en">
 
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        nav {
-            background-color: #444;
-            color: #fff;
-            padding: 1em;
-        }
+        <title>Universidade Rede Lã</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: space-around;
-        }
+            header {
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                padding: 1em;
+            }
 
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            cursor: pointer;
-        }
+            #menu-icon {
+                cursor: pointer;
+                font-size: 20px;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
 
-        section {
-            display: none;
-            padding: 20px;
-        }
+            #menu-icon.active {
+                color: #ff0;
+            }
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+            nav {
+                background-color: #444;
+                color: #fff;
+                padding: 1em;
+                display: flex;
+                flex-direction: column;
+                /* Mudança importante */
+                align-items: center;
+                /* Centraliza o conteúdo */
+                position: absolute;
+                top: 60px;
+                /* Ajuste para não sobrepor o cabeçalho */
+                width: 100%;
+                z-index: 1;
+                display: none;
+            }
 
-        .submenu {
-            display: none;
-        }
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                /* Mudança importante */
+                align-items: center;
+                /* Centraliza o conteúdo */
+                width: 100%;
+            }
 
-        #ensino .submenu {
-            display: block;
-        }
-    </style>
-</head>
+            nav a {
+                text-decoration: none;
+                color: #fff;
+                cursor: pointer;
+                margin: 10px 0;
+                text-align: center;
+                padding-right: 10px;
+            }
+
+            section {
+                display: none;
+                padding: 20px;
+            }
+
+            footer {
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                padding: 1em;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+
+            form {
+                max-width: 400px;
+            }
+
+            .submenu {
+                display: none;
+            }
+
+            #ensino .submenu,
+            #proplan .submenu {
+                display: block;
+            }
+
+            @media screen and (max-width: 600px) {
+                nav {
+                    top: 40px;
+                }
+
+                #menu-icon.active::before {
+                    content: '✕';
+                    /* Adiciona ícone de fechar quando o menu está aberto */
+                }
+
+                nav ul {
+                    margin-top: 10px;
+                }
+
+                .submenu {
+                    display: block;
+                }
+
+                #ensino .submenu,
+                #proplan .submenu {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+
 <body>
     <header>
-        <h1>A Universidade Rede Lã</h1>
+        <h1>Universidade Rede Lã</h1>
+        <div id="menu-icon" onclick="toggleMenu()">☰</div>
     </header>
-    
+
     <nav>
         <ul>
             <li><a onclick="showContent('universidade')">A Universidade</a></li>
@@ -287,10 +359,24 @@
     </footer>
 
     <script>
+        function toggleMenu() {
+            var nav = document.querySelector('nav');
+            var menuIcon = document.getElementById('menu-icon');
+
+            // Alternar a visibilidade do menu
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+                menuIcon.classList.remove('active');
+            } else {
+                nav.style.display = 'flex';
+                menuIcon.classList.add('active');
+            }
+        }
+
         function showContent(sectionId) {
             // Oculta todas as seções
             var sections = document.querySelectorAll('section');
-            sections.forEach(function(section) {
+            sections.forEach(function (section) {
                 section.style.display = 'none';
             });
 
@@ -299,7 +385,11 @@
             if (selectedSection) {
                 selectedSection.style.display = 'block';
             }
+
+            // Oculta o menu automaticamente após escolher uma seção
+            toggleMenu();
         }
     </script>
 </body>
+
 </html>
