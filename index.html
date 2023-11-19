@@ -55,7 +55,6 @@
             /* Alterado para ocupar a largura total da viewport */
             z-index: 1;
             display: none;
-            /* position: absolute; Removido */
             top: 60px;
             box-sizing: border-box;
             /* Adicionado para incluir padding e borda na largura total */
@@ -102,24 +101,23 @@
         }
 
 
-        .submenu {
+        .submenu-content {
             display: none;
         }
 
-        #ensino .submenu,
-        #proplan .submenu {
+        #ensino .submenu-content,
+        #proplan .submenu-content {
             display: block;
         }
 
         @media screen and (max-width: 600px) {
             body {
                 overflow-x: auto;
-                /* Adicionado para permitir rolagem em telas pequenas */
+                /* Adicionado para permitir rolagem em celulares*/
             }
 
             form {
                 font-size: 14px;
-                /* Ajuste o tamanho da fonte conforme necessário */
                 margin: 10px;
                 /* Adicionado espaçamento ao redor do formulário */
             }
@@ -136,7 +134,7 @@
                 /* Alterado para vertical */
             }
 
-            .submenu {
+            .submenu-content {
                 display: block;
             }
 
@@ -148,7 +146,6 @@
 
         @media screen and (min-width: 601px) {
 
-            /* Adicionada regra de mídia para telas maiores que 600 pixels */
             #menu-icon {
                 display: none;
                 /* Oculta o ícone do menu em telas maiores que 600 pixels */
@@ -157,6 +154,29 @@
             nav {
                 display: flex !important;
                 /* Força a exibição do menu em telas maiores que 600 pixels */
+            }
+        }
+
+        /* Adicionar uma classe específica para os submenus */
+        .submenu-content {
+            display: none;
+        }
+
+        #ensino .submenu-content,
+        #proplan .submenu-content {
+            display: block;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            /* Ajustar para exibir submenus em celulares*/
+            .submenu-content {
+                display: block;
+            }
+
+            #ensino .submenu-content,
+            #proplan .submenu-content {
+                display: none;
             }
         }
     </style>
@@ -187,7 +207,9 @@
 
     <section id="universidade">
         <h2>A Universidade</h2>
-        <p>Conteúdo aleatório sobre a universidade.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam, natus, veritatis recusandae necessitatibus
+            minus ullam dolore optio voluptatem eveniet dicta minima sit beatae quisquam explicabo quam cumque accusamus
+            deleniti qui?</p>
     </section>
 
     <section id="pro-reitorias">
@@ -211,118 +233,154 @@
 
     <section id="propa">
         <h2>PROPA</h2>
-        <p>Conteúdo aleatório sobre a PROPA.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet fugit ullam voluptas quidem eligendi minima
+            eos necessitatibus? Voluptatem rerum porro, facere veniam quia quasi neque minus, sint, harum perspiciatis
+            impedit.</p>
     </section>
 
     <section id="progeac">
         <h2>PROGEAC</h2>
-        <p>Conteúdo aleatório sobre a PROGEAC.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum in libero asperiores veniam aspernatur,
+            numquam eveniet nesciunt blanditiis itaque at fuga sequi cupiditate, modi labore hic laboriosam voluptatum
+            nihil perferendis!</p>
     </section>
 
     <section id="proppg">
         <h2>PROPPG</h2>
-        <p>Conteúdo aleatório sobre a PROPPG.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, molestiae aliquam. Enim iste corporis
+            voluptatibus alias dolorem voluptates itaque consequuntur optio officia placeat, non maxime! Consequatur
+            vitae perspiciatis tempore possimus!</p>
     </section>
 
     <section id="progepe">
         <h2>PROGEPE</h2>
-        <p>Conteúdo aleatório sobre a PROGEPE.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores esse, voluptatibus impedit iure ut
+            blanditiis debitis? Repellat perferendis molestiae enim facere facilis quas ullam vel? Voluptates ducimus
+            eos quae aliquam.</p>
     </section>
 
     <section id="proaf">
         <h2>PROAF</h2>
-        <p>Conteúdo aleatório sobre a PROAF.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae quas soluta veritatis qui id sequi at laborum
+            ducimus vel? Ab esse quia facere omnis enim voluptatum placeat veritatis, vel repellendus.</p>
     </section>
 
     <section id="proex">
         <h2>PROEX</h2>
-        <p>Conteúdo aleatório sobre a PROEX.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae eos iure reprehenderit. Porro, autem
+            magnam quia consectetur recusandae ut corporis placeat dolore doloremque ex alias officia asperiores culpa
+            ipsa molestias!</p>
     </section>
 
     <section id="proplan">
         <h2>PROPLAN</h2>
         <p>Selecione um sub-menu para ver mais informações.</p>
-        <ul class="submenu">
-            <li class="submenu"><a onclick="showContent('proplan-conteudo1')">Conteúdo 1</a></li>
-            <li class="submenu"><a onclick="showContent('proplan-conteudo2')">Conteúdo 2</a></li>
+        <ul class="submenu-content">
+            <li><a onclick="showContent('proplan-conteudo1')">Conteúdo 1</a></li>
+            <li><a onclick="showContent('proplan-conteudo2')">Conteúdo 2</a></li>
         </ul>
     </section>
 
     <section id="proplan-conteudo1">
         <h2>Conteúdo 1</h2>
-        <p>Conteúdo aleatório sobre o sub-menu de PROPLAN - Conteúdo 1.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi excepturi eveniet blanditiis possimus
+            dolore qui et, quas temporibus, quam neque voluptate exercitationem quaerat eligendi voluptatem quisquam
+            laborum odit sit? Fugit.</p>
     </section>
 
     <section id="proplan-conteudo2">
         <h2>Conteúdo 2</h2>
-        <p>Conteúdo aleatório sobre o sub-menu de PROPLAN - Conteúdo 2.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab consequuntur soluta illum doloribus sunt, numquam
+            iusto corporis, cumque, laboriosam nesciunt architecto nam debitis nobis sequi excepturi. Laborum corrupti
+            nemo iste!</p>
     </section>
 
     <section id="ensino">
         <h2>Ensino</h2>
-        <p>Conteúdo aleatório sobre programas de graduação e pós-graduação oferecidos.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id incidunt tempore voluptas assumenda saepe
+            architecto veniam aspernatur quidem voluptatem quae est iste, doloremque itaque dolor animi debitis quaerat
+            quia. Fugit.</p>
         <ul class="submenu">
-            <li class="submenu"><a onclick="showContent('graduacao')">Graduação</a></li>
-            <li class="submenu"><a onclick="showContent('posgraduacao')">Pós Graduação</a></li>
+            <li><a onclick="showContent('graduacao')">Graduação</a></li>
+            <li><a onclick="showContent('posgraduacao')">Pós Graduação</a></li>
         </ul>
     </section>
 
-    <section id="graduacao" class="submenu">
+    <section id="graduacao">
         <h2>Graduação</h2>
-        <p>Conteúdo aleatório sobre os programas de graduação oferecidos.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque minus optio accusamus, unde in
+            recusandae dolore exercitationem rem molestiae laborum impedit repellendus voluptate inventore vel ipsam
+            eaque? Pariatur, totam!</p>
     </section>
 
-    <section id="posgraduacao" class="submenu">
+    <section id="posgraduacao">
         <h2>Pós Graduação</h2>
-        <p>Conteúdo aleatório sobre os programas de pós-graduação oferecidos.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, quam! Labore dignissimos optio aspernatur,
+            et facere dolore neque sint ratione, incidunt ab excepturi esse eaque placeat harum officia tempore at.</p>
     </section>
 
     <!-- Adicione mais seções conforme necessário -->
 
     <section id="pesquisa">
         <h2>Pesquisa</h2>
-        <p>Conteúdo aleatório sobre as atividades de pesquisa na universidade.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam nemo odit exercitationem excepturi quae,
+            ipsum fuga numquam ratione, molestias repudiandae molestiae ducimus nostrum? Soluta, nobis earum? Eaque
+            aspernatur neque odit.</p>
     </section>
 
     <section id="extensao">
         <h2>Extensão</h2>
-        <p>Conteúdo aleatório sobre projetos e atividades de extensão universitária.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quia sequi ipsum at rem tenetur ea laborum
+            natus quaerat non provident consectetur, atque maiores ducimus ab eum placeat eligendi quis.</p>
     </section>
 
     <section id="servicos">
         <h2>Serviços</h2>
-        <p>Conteúdo aleatório sobre os serviços oferecidos pela universidade.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum adipisci explicabo cupiditate libero
+            accusantium? Sed itaque sequi culpa modi soluta fugiat reprehenderit deserunt corrupti aperiam, beatae,
+            ducimus, amet aliquam iure?</p>
     </section>
 
     <section id="acesso">
         <h2>Acesso a Informação</h2>
-        <p>Conteúdo aleatório sobre como obter informações de forma transparente.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit sint iusto laudantium facere maiores
+            doloremque optio aliquid enim assumenda aspernatur perferendis sequi repudiandae natus, neque ratione ipsa
+            cumque, officia magnam?</p>
     </section>
 
     <section id="contato">
         <h2>Fale Conosco</h2>
-        <p>Conteúdo aleatório sobre como entrar em contato conosco.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem non optio fuga quas adipisci quis ipsa
+            fugiat quod eius. Consectetur nisi quisquam dolor ullam velit est veritatis distinctio optio nihil.</p>
     </section>
 
     <section id="calendario">
         <h2>Calendário</h2>
-        <p>Conteúdo aleatório sobre datas importantes no calendário acadêmico.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique dignissimos iste, deleniti amet distinctio
+            veritatis eveniet, accusamus esse praesentium ad officiis iusto nesciunt quae dolores corrupti officia at
+            asperiores in!</p>
     </section>
 
     <section id="editais">
         <h2>Editais</h2>
-        <p>Conteúdo aleatório sobre os editais em vigor na universidade.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni a maiores omnis, dicta laboriosam excepturi
+            quam necessitatibus sapiente nobis esse quo sed aperiam ratione suscipit consequatur dignissimos
+            consequuntur fugit non.</p>
     </section>
 
     <section id="concursos">
         <h2>Concursos</h2>
-        <p>Conteúdo aleatório sobre os concursos realizados pela universidade.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae corporis ullam, nemo beatae pariatur,
+            repellendus sed blanditiis nobis doloremque quas debitis? Quod hic molestiae tempora quidem impedit
+            architecto, sint illo.</p>
     </section>
 
     <!-- Seção Processo Seletivo 2024 com o formulário de inscrição -->
     <section id="processo-seletivo">
         <h2>Processo Seletivo 2024</h2>
-        <p>Conteúdo aleatório sobre o processo seletivo de 2024.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quisquam obcaecati impedit nulla eaque quos,
+            porro cum ipsum, repellat recusandae expedita eligendi aliquam autem minus, maiores repudiandae?
+            Consectetur, modi saepe.</p>
 
         <!-- Formulário de Inscrição -->
         <form>
