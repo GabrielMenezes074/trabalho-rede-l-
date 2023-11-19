@@ -4,136 +4,163 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Universidade Rede Lã</title>
-    <!DOCTYPE html>
-    <html lang="en">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+            margin-bottom: 100px;
+        }
 
-        <title>Universidade Rede Lã</title>
-        <style>
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: relative;
+            /* Adicione esta linha para posicionamento relativo */
+        }
+
+        #menu-icon {
+            cursor: pointer;
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            /* Alterado para o canto superior esquerdo */
+        }
+
+        #menu-icon.active {
+            color: #ff0;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 1em;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            /* Alterado para ocupar a largura total da viewport */
+            z-index: 1;
+            display: none;
+            /* position: absolute; Removido */
+            top: 60px;
+            box-sizing: border-box;
+            /* Adicionado para incluir padding e borda na largura total */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            /* Alterado para horizontal */
+            align-items: center;
+            width: 100%;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            cursor: pointer;
+            margin: 0 10px;
+            /* Adicione espaçamento entre os itens */
+        }
+
+        section {
+            display: none;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 0.5em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            max-width: 100%;
+            box-sizing: border-box;
+            margin: 10px;
+        }
+
+
+        .submenu {
+            display: none;
+        }
+
+        #ensino .submenu,
+        #proplan .submenu {
+            display: block;
+        }
+
+        @media screen and (max-width: 600px) {
             body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f4f4f4;
-            }
-
-            header {
-                background-color: #333;
-                color: #fff;
-                text-align: center;
-                padding: 1em;
-            }
-
-            #menu-icon {
-                cursor: pointer;
-                font-size: 20px;
-                position: absolute;
-                top: 10px;
-                right: 10px;
-            }
-
-            #menu-icon.active {
-                color: #ff0;
-            }
-
-            nav {
-                background-color: #444;
-                color: #fff;
-                padding: 1em;
-                display: flex;
-                flex-direction: column;
-                /* Mudança importante */
-                align-items: center;
-                /* Centraliza o conteúdo */
-                position: absolute;
-                top: 60px;
-                /* Ajuste para não sobrepor o cabeçalho */
-                width: 100%;
-                z-index: 1;
-                display: none;
-            }
-
-            nav ul {
-                list-style-type: none;
-                padding: 0;
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-                /* Mudança importante */
-                align-items: center;
-                /* Centraliza o conteúdo */
-                width: 100%;
-            }
-
-            nav a {
-                text-decoration: none;
-                color: #fff;
-                cursor: pointer;
-                margin: 10px 0;
-                text-align: center;
-                padding-right: 10px;
-            }
-
-            section {
-                display: none;
-                padding: 20px;
-            }
-
-            footer {
-                background-color: #333;
-                color: #fff;
-                text-align: center;
-                padding: 1em;
-                position: fixed;
-                bottom: 0;
-                width: 100%;
+                overflow-x: auto;
+                /* Adicionado para permitir rolagem em telas pequenas */
             }
 
             form {
-                max-width: 400px;
+                font-size: 14px;
+                /* Ajuste o tamanho da fonte conforme necessário */
+                margin: 10px;
+                /* Adicionado espaçamento ao redor do formulário */
+            }
+
+            nav {
+                top: 40px;
+                flex-direction: column;
+                /* Alterado para vertical */
+            }
+
+            nav ul {
+                margin-top: 10px;
+                flex-direction: column;
+                /* Alterado para vertical */
             }
 
             .submenu {
-                display: none;
+                display: block;
             }
 
             #ensino .submenu,
             #proplan .submenu {
-                display: block;
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 601px) {
+
+            /* Adicionada regra de mídia para telas maiores que 600 pixels */
+            #menu-icon {
+                display: none;
+                /* Oculta o ícone do menu em telas maiores que 600 pixels */
             }
 
-            @media screen and (max-width: 600px) {
-                nav {
-                    top: 40px;
-                }
-
-                #menu-icon.active::before {
-                    content: '✕';
-                    /* Adiciona ícone de fechar quando o menu está aberto */
-                }
-
-                nav ul {
-                    margin-top: 10px;
-                }
-
-                .submenu {
-                    display: block;
-                }
-
-                #ensino .submenu,
-                #proplan .submenu {
-                    display: none;
-                }
+            nav {
+                display: flex !important;
+                /* Força a exibição do menu em telas maiores que 600 pixels */
             }
-        </style>
-    </head>
+        }
+    </style>
+</head>
 
 <body>
     <header>
@@ -363,13 +390,16 @@
             var nav = document.querySelector('nav');
             var menuIcon = document.getElementById('menu-icon');
 
-            // Alternar a visibilidade do menu
-            if (nav.style.display === 'flex') {
-                nav.style.display = 'none';
-                menuIcon.classList.remove('active');
-            } else {
-                nav.style.display = 'flex';
-                menuIcon.classList.add('active');
+            // Adicionada verificação do tamanho da tela
+            if (window.innerWidth <= 600) {
+                // Alternar a visibilidade do menu para telas pequenas
+                if (nav.style.display === 'flex') {
+                    nav.style.display = 'none';
+                    menuIcon.classList.remove('active');
+                } else {
+                    nav.style.display = 'flex';
+                    menuIcon.classList.add('active');
+                }
             }
         }
 
@@ -389,6 +419,11 @@
             // Oculta o menu automaticamente após escolher uma seção
             toggleMenu();
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Mostra a seção "A Universidade" ao carregar a página
+            showContent('universidade');
+        });
     </script>
 </body>
 
